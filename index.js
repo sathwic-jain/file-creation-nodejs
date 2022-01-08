@@ -16,6 +16,10 @@ const filename=`${fdate}-(${time})`
 var timestamp=Date.now();
 timestamp=timestamp.toString();
 
+app.get("/",async(req,res)=>{
+    res.send("Welcome to File-creation app");
+})
+
 app.get("/add",async(request,response)=>{
     console.log("hi");
     fs.writeFile(`File/${filename}.txt`,timestamp,function(err){
