@@ -1,10 +1,11 @@
 import express from "express";
 import fs from "fs";
+import cors from "cors";
 const app=express();
 
 const PORT=process.env.PORT || 3000;
 app.listen(PORT,()=>{console.log("listening to",PORT)});
-
+app.use(cors());
 var thedate=new Date();
 const date=thedate.getDate();
 const month=thedate.getMonth()+1;
